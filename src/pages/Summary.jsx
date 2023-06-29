@@ -52,7 +52,7 @@ const Summary = () => {
     search();
   }, [url]);
 
-  if (loading) return <MoonLoader color="#000000" size={30} />;
+  if (url && loading) return <MoonLoader color="#000000" size={30} />;
 
   return (
     <>
@@ -60,7 +60,9 @@ const Summary = () => {
         <ps.UrlInput
           placeholder="ChatGPT 대화내용 공유하기 URL 을 넣어주세요 !"
           onChange={handleChange}
-          onKeyPress={() => handleEnterSend(query)}
+          onKeyPress={(e) => {
+            e.key === "Enter" && handleEnterSend(query);
+          }}
         />
         <ps.SendIcon
           src={query ? send_focus : send}
