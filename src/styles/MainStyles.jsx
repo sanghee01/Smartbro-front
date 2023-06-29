@@ -8,10 +8,17 @@ export const Section = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  & > div {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+`;
+
+export const HelpBox = styled.div`
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1062ff;
+  & > img {
+    width: 15px;
+    height: 13px;
+    margin-left: 5px;
   }
 `;
