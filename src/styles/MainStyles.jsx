@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-  height: 80vh;
+  height: 90vh;
   width: 100%;
   margin: auto;
   display: flex;
@@ -69,4 +69,12 @@ export const Logo = styled.img`
   width: 138px;
   height: 168px;
   margin-bottom: 30px;
+`;
+
+export const Subscript = styled.img`
+  position: absolute;
+  right: 17%;
+  top: 30px;
+  width: 307.2px;
+  height: 217.6px;
 `;

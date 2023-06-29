@@ -10,13 +10,12 @@ import send_focus from "../assets/send_focus.png";
 
 const instance = axios.create();
 
-const Summary = () => {
+const Summary = ({ setDisplay }) => {
   const [url, setUrl] = useState();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [isCliped, setIsCliped] = useState(false);
   const [query, setQuery] = useState();
-
   const handleChange = (e) => {
     setQuery(e.target.value);
   };
@@ -55,6 +54,15 @@ const Summary = () => {
 
   if (url && loading) return <MoonLoader color="#000000" size={30} />;
 
+  const processText = (data) => {
+    let text = JSON.stringify(data);
+
+    text = text.substring(1, text.length - 1);
+    let paragraphs = text.split(".");
+    paragraphs.pop();
+    return paragraphs.map((i) => <ps.TextList>- {i}</ps.TextList>);
+  };
+
   return (
     <>
       <ps.InputDiv>
@@ -69,13 +77,14 @@ const Summary = () => {
         <ps.SendIcon
           src={query ? send_focus : send}
           onClick={() => {
+            setDisplay(false);
             handleSend(query);
           }}
         />
       </ps.InputDiv>
       {data && (
         <>
-          <ps.TextBox>{JSON.stringify(data)}</ps.TextBox>
+          <ps.TextBox>{processText(data)}</ps.TextBox>
           <CopyToClipboard text={data} onCopy={handleCopy}>
             {isCliped ? <img src={clip_done} /> : <img src={clip} />}
           </CopyToClipboard>

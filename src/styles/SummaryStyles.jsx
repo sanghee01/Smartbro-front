@@ -71,3 +71,8 @@ export const TextBox = styled.div`
   width: 52%;
   padding: 40px 0px;
 `;
+
+export const TextList = styled.div`
+  font-weight: 600;
+  padding: 1px 0;
+`;
