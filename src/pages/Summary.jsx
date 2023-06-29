@@ -23,8 +23,10 @@ const Summary = () => {
 
   const handleSend = (queryUrl) => {
     setUrl(queryUrl);
-    // console.log(queryUrl);
-    console.log(url);
+  };
+
+  const handleEnterSend = (queryUrl) => {
+    setUrl(queryUrl);
   };
 
   const handleCopy = () => {
@@ -33,8 +35,6 @@ const Summary = () => {
 
   useEffect(() => {
     const search = async () => {
-      console.log("서치");
-      console.log(url);
       try {
         setData(null);
         setLoading(true); //로딩이 시작됨
@@ -56,18 +56,17 @@ const Summary = () => {
 
   return (
     <>
-      <ps.Form>
-        <ps.InputDiv>
-          <ps.UrlInput
-            placeholder="CHATGPT 대화내용 공유하기 URL 을 넣어주세요 !"
-            onChange={handleChange}
-          />
-          <ps.SendIcon
-            src={query ? send_focus : send}
-            onClick={() => handleSend(query)}
-          />
-        </ps.InputDiv>
-      </ps.Form>
+      <ps.InputDiv>
+        <ps.UrlInput
+          placeholder="ChatGPT 대화내용 공유하기 URL 을 넣어주세요 !"
+          onChange={handleChange}
+          onKeyPress={() => handleEnterSend(query)}
+        />
+        <ps.SendIcon
+          src={query ? send_focus : send}
+          onClick={() => handleSend(query)}
+        />
+      </ps.InputDiv>
       {data && (
         <>
           <ps.TextBox>{JSON.stringify(data)}</ps.TextBox>

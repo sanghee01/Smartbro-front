@@ -41,7 +41,7 @@ const HelpModal = () => {
   return (
     <>
       <pm.HelpBox onClick={handleOpenHelp}>
-        <span>Chat Gpt URL 생성방법을 모르시나요?</span>
+        <span>ChatGpt URL 생성방법을 모르시나요?</span>
         <img src={go_help} />
       </pm.HelpBox>
       {isOpen && (
