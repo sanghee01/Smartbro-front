@@ -48,6 +48,8 @@ const Summary = () => {
       } catch (e) {}
       setLoading(false);
     };
+    setIsCliped(false);
+    setQuery("");
     search();
   }, [url]);
 
@@ -59,13 +61,16 @@ const Summary = () => {
         <ps.UrlInput
           placeholder="ChatGPT 대화내용 공유하기 URL 을 넣어주세요 !"
           onChange={handleChange}
+          value={query}
           onKeyPress={(e) => {
             e.key === "Enter" && handleSend(query);
           }}
         />
         <ps.SendIcon
           src={query ? send_focus : send}
-          onClick={() => handleSend(query)}
+          onClick={() => {
+            handleSend(query);
+          }}
         />
       </ps.InputDiv>
       {data && (

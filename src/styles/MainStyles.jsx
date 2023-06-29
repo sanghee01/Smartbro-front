@@ -11,11 +11,14 @@ export const Section = styled.section`
 `;
 
 export const HelpBox = styled.div`
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #1062ff;
+  font-size: 14px;
+  & > span {
+    cursor: pointer;
+  }
   & > img {
     width: 15px;
     height: 13px;
