@@ -13,6 +13,7 @@ const instance = axios.create();
 
 const Summary = () => {
   const location = useLocation();
+  // const [url, setURL]
   const url = location.state.url;
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -30,7 +31,7 @@ const Summary = () => {
         setData(null);
         setLoading(true); //로딩이 시작됨
         await instance
-          .post("http://184.169.230.38:8080/upload", {
+          .post("https://smartbro-back.fly.dev/upload", {
             url: url,
           })
           .then((response) => {
