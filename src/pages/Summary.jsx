@@ -30,7 +30,7 @@ const Summary = () => {
         setData(null);
         setLoading(true); //로딩이 시작됨
         await instance
-          .post("https//184.169.230.38:8080/upload", {
+          .post("http//184.169.230.38:8080/upload", {
             url: url,
           })
           .then((response) => {
