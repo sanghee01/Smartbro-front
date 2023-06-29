@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-  height: 100vh;
+  height: 80vh;
   width: 100%;
   margin: auto;
   display: flex;
