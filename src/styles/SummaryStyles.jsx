@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const Title = styled.h1`
+  font-size: 30px;
+`;
+
 export const Section = styled.section`
   height: 80vh;
   width: 100%;
