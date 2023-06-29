@@ -65,13 +65,12 @@ const Summary = () => {
           <ps.SendIcon
             src={query ? send_focus : send}
             onClick={() => handleSend(query)}
-            onKeyPress={() => handleSend(query)}
           />
         </ps.InputDiv>
       </ps.Form>
       {data && (
         <>
-          <div>{JSON.stringify(data)}</div>
+          <ps.TextBox>{JSON.stringify(data)}</ps.TextBox>
           <CopyToClipboard text={data} onCopy={handleCopy}>
             {isCliped ? <img src={clip_done} /> : <img src={clip} />}
           </CopyToClipboard>

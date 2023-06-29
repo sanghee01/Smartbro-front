@@ -68,5 +68,6 @@ export const SendIcon = styled.img`
 `;
 
 export const TextBox = styled.div`
-  width: 70%;
+  width: 52%;
+  padding: 40px 0px;
 `;
