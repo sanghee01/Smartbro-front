@@ -1,13 +1,13 @@
+import React from "react";
 import logo from "../assets/logo.png";
-import * as s from "../styles/SendStyles";
-import * as st from "../styles/TitleStyles";
+import * as ct from "../styles/TitleStyles";
 
 const Title = () => {
   return (
-    <st.Header>
-      <st.Title>이 해커톤에 사용해줘</st.Title>
-      <st.Logo src={logo} />
-    </st.Header>
+    <ct.Header>
+      <ct.Title>세상을 바꾸는 지피티</ct.Title>
+      <ct.Logo src={logo} />
+    </ct.Header>
   );
 };
 
