@@ -17,6 +17,7 @@ const HelpModal = () => {
 
   const handleCloseHelp = () => {
     setIsOpen(false);
+    setImgNum(0);
   };
 
   const handleNumDown = () => {

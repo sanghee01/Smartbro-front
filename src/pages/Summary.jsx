@@ -1,32 +1,40 @@
-import React, { useEffect, useState, useRef } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import axios from "axios";
 import MoonLoader from "react-spinners/MoonLoader";
-import Send from "../components/Send";
-import Title from "../components/Title";
 import * as ps from "../styles/SummaryStyles";
 import clip from "../assets/clip.png";
 import clip_done from "../assets/clip_done.png";
+import send from "../assets/send.png";
+import send_focus from "../assets/send_focus.png";
 
 const instance = axios.create();
 
 const Summary = () => {
-  const location = useLocation();
-  // const [url, setURL]
-  const url = location.state.url;
+  const [url, setUrl] = useState();
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [isCliped, setIsCliped] = useState(false);
-  const initRef = useRef(false);
+  const [query, setQuery] = useState();
+
+  const handleChange = (e) => {
+    setQuery(e.target.value);
+  };
+
+  const handleSend = (queryUrl) => {
+    setUrl(queryUrl);
+    // console.log(queryUrl);
+    console.log(url);
+  };
 
   const handleCopy = () => {
     setIsCliped(true);
   };
 
-  // instance.defaults.timeout = 2500;
   useEffect(() => {
     const search = async () => {
+      console.log("서치");
+      console.log(url);
       try {
         setData(null);
         setLoading(true); //로딩이 시작됨
@@ -41,28 +49,34 @@ const Summary = () => {
       } catch (e) {}
       setLoading(false);
     };
-
-    if (!initRef.current) {
-      initRef.current = true;
-      console.log("first");
-      search();
-    }
+    search();
   }, [url]);
 
   if (loading) return <MoonLoader color="#000000" size={30} />;
 
   return (
     <>
-      <ps.Header>
-        <Title />
-        <Send />
-      </ps.Header>
-      <ps.Section>
-        <div>{JSON.stringify(data)}</div>
-        <CopyToClipboard text={data} onCopy={handleCopy}>
-          {isCliped ? <img src={clip_done} /> : <img src={clip} />}
-        </CopyToClipboard>
-      </ps.Section>
+      <ps.Form>
+        <ps.InputDiv>
+          <ps.UrlInput
+            placeholder="CHATGPT 대화내용 공유하기 URL 을 넣어주세요 !"
+            onChange={handleChange}
+          />
+          <ps.SendIcon
+            src={query ? send_focus : send}
+            onClick={() => handleSend(query)}
+            onKeyPress={() => handleSend(query)}
+          />
+        </ps.InputDiv>
+      </ps.Form>
+      {data && (
+        <>
+          <div>{JSON.stringify(data)}</div>
+          <CopyToClipboard text={data} onCopy={handleCopy}>
+            {isCliped ? <img src={clip_done} /> : <img src={clip} />}
+          </CopyToClipboard>
+        </>
+      )}
     </>
   );
 };

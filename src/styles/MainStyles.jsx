@@ -61,3 +61,7 @@ export const ModalNextBtn = styled.img`
   width: 40px;
   height: 80px;
 `;
+
+export const Logo = styled.img`
+  transform: scale(0.7);
+`;
