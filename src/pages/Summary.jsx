@@ -25,10 +25,6 @@ const Summary = () => {
     setUrl(queryUrl);
   };
 
-  const handleEnterSend = (queryUrl) => {
-    setUrl(queryUrl);
-  };
-
   const handleCopy = () => {
     setIsCliped(true);
   };
@@ -37,14 +33,17 @@ const Summary = () => {
     const search = async () => {
       try {
         setData(null);
-        setLoading(true); //로딩이 시작됨
+        if (!url.startsWith("https://chat.openai.com/share/")) {
+          alert("올바른 URL로 입력해주세요.");
+          return;
+        }
+        setLoading(true);
         await instance
           .post("https://smartbro-back.fly.dev/upload", {
             url: url,
           })
           .then((response) => {
             setData(response.data.response);
-            console.log(response);
           });
       } catch (e) {}
       setLoading(false);
@@ -61,7 +60,7 @@ const Summary = () => {
           placeholder="ChatGPT 대화내용 공유하기 URL 을 넣어주세요 !"
           onChange={handleChange}
           onKeyPress={(e) => {
-            e.key === "Enter" && handleEnterSend(query);
+            e.key === "Enter" && handleSend(query);
           }}
         />
         <ps.SendIcon

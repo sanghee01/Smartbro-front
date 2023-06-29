@@ -26,7 +26,6 @@ const HelpModal = () => {
     } else {
       setImgNum((imgNum) => imgNum - 1);
     }
-    console.log(imgNum);
   };
 
   const handleNumUp = () => {
@@ -35,7 +34,6 @@ const HelpModal = () => {
     } else {
       setImgNum((imgNum) => imgNum + 1);
     }
-    console.log(imgNum);
   };
 
   return (
