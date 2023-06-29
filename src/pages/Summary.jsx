@@ -52,7 +52,13 @@ const Summary = ({ setDisplay }) => {
     search();
   }, [url]);
 
-  if (url && loading) return <MoonLoader color="#000000" size={30} />;
+  if (url && loading)
+    return (
+      <>
+        <MoonLoader color="#000000" size={30} />
+        <ps.LoadingText>URL에서 흥미로운 내용 추출중...</ps.LoadingText>
+      </>
+    );
 
   const processText = (data) => {
     let text = JSON.stringify(data);

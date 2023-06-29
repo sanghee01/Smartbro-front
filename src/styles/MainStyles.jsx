@@ -73,8 +73,8 @@ export const Logo = styled.img`
 
 export const Subscript = styled.img`
   position: absolute;
-  right: 17%;
+  right: 23%;
   top: 30px;
-  width: 307.2px;
-  height: 217.6px;
+  width: 276.48px;
+  height: 195.84px;
 `;

@@ -76,3 +76,8 @@ export const TextList = styled.div`
   font-weight: 600;
   padding: 1px 0;
 `;
+
+export const LoadingText = styled.span`
+  margin-top: 30px;
+  opacity: 0.4;
+`;
