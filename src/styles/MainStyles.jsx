@@ -24,6 +24,9 @@ export const HelpBox = styled.div`
     height: 13px;
     margin-left: 5px;
   }
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
 `;
 
 export const Modal = styled.div`
@@ -77,4 +80,7 @@ export const Subscript = styled.img`
   top: 30px;
   width: 276.48px;
   height: 195.84px;
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
 `;

@@ -37,13 +37,6 @@ export const Header = styled.div`
   }
 `;
 
-export const Form = styled.form`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
 export const InputDiv = styled.div`
   padding: 6px 10px;
   width: 40%;
@@ -53,6 +46,12 @@ export const InputDiv = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media screen and (max-width: 900px) {
+    width: 70%;
+    ::placeholder {
+      font-size: 10px;
+    }
+  }
 `;
 
 export const UrlInput = styled.input`
@@ -70,6 +69,9 @@ export const SendIcon = styled.img`
 export const TextBox = styled.div`
   width: 52%;
   padding: 40px 0px;
+  @media screen and (max-width: 900px) {
+    width: 70%;
+  }
 `;
 
 export const TextList = styled.div`
