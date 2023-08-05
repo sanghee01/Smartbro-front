@@ -30,7 +30,7 @@ ChatGPT 공유하기 기능으로 생성된 코드가 포함된 링크(Shared li
 **이것을 데이터화하여 어떤 서비스**를 제공할 수 있을 것인가?  
 </br>
 
-<img src="https://github.com/sanghee01/Smartbro-front/assets/80993302/c3926af8-b3ea-486b-90f0-bf0cafecb2ef" width="50%">
+<img src="https://github.com/sanghee01/Smartbro-front/assets/80993302/c3926af8-b3ea-486b-90f0-bf0cafecb2ef" width="60%">
 
 </br>
 </br>
@@ -50,7 +50,7 @@ ChatGPT 공유하기 기능으로 생성된 코드가 포함된 링크(Shared li
 </br>
 
 ## 서비스 소개
-<img src="https://github.com/sanghee01/Smartbro-front/assets/80993302/59405ead-ff9f-49d3-9409-c26045b3044c" width="70%">
+<img src="https://github.com/sanghee01/Smartbro-front/assets/80993302/59405ead-ff9f-49d3-9409-c26045b3044c" width="80%">
 
 </br>
 </br>
@@ -66,7 +66,7 @@ ChatGPT 공유하기 기능으로 생성된 코드가 포함된 링크(Shared li
 긁어와서 전처리를 하고  
 **질문과 답변, 그리고 코드 포함 답변, 코드가 미포함 답변으로 구분할 수 있는 데이터셋**을 만들었습니다.
 
-<img src="https://github.com/sanghee01/Smartbro-front/assets/80993302/d5ef9566-7b3a-43ec-a22a-6d8eda48f6e9" width="20%">
+<img src="https://github.com/sanghee01/Smartbro-front/assets/80993302/d5ef9566-7b3a-43ec-a22a-6d8eda48f6e9" width="30%">
 
 </br>
 </br>
